@@ -1,0 +1,43 @@
+ <!DOCTYPE html>
+ <html>
+ <head>
+     <meta charset="utf-8" />
+     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+     <title>Page Title</title>
+     <meta name="viewport" content="width=device-width, initial-scale=1">
+     <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+     <script src="main.js"></script>
+ </head>
+ <body>
+     <script>
+         function Person(){
+             var args = arguments;
+             if (typeof args[0] === 'object'/*判断是不是字符串变量*/&&args[0]/*判断是不是null，typeof null也是object*/)
+             {
+                 if (args[0].name)
+                 {
+                     this.name = args[0].name;
+                 }
+                 if (args[0].age){
+                     this.age = args[0].age;
+                 }
+             }
+             else{
+                 if (args[0]){
+                     this.name = args[0];
+                 }
+                 if (args[1]){
+                     this.age = args[1];
+                 }
+             }
+         }
+             Person.prototype.toString = function (){      //重写Object.prototype.toString;
+             return "name = "+this.name +"<br/>"+ "age = " + this.age+"<br/>";
+         } ;
+         var Rose = new Person({name :"Rose",age : 20});
+        document.write( Rose.toString());
+         var Nash = new Person("Nash","20");
+        document.write( Nash.toString());
+     </script>
+ </body>
+ </html>
