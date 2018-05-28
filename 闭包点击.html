@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    <script src="main.js"></script>
+</head>
+<body>
+    <li>111</li>
+    <li>222</li>
+    <li>333</li>
+    <li>444</li>
+    <script>
+        var a = document.getElementsByTagName("li");
+        for (var i =0;i<a.length;i++)
+        {
+            !function(i)
+            {
+                a[i].addEventListener("click",function(){
+                    console.log(i+1);
+                });
+            }(i);
+        }
+    </script>
+</body>
+</html>
